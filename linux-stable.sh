@@ -245,7 +245,7 @@ git add . && git cherry-pick --continue"
             fi ;;
 
         "merge")
-            if ! GIT_MERGE_VERBOSITY=1 git merge --no-edit "v${TARGET_VERSION}"; then
+            if ! GIT_MERGE_VERBOSITY=1 git merge --allow-unrelated-histories --no-edit "v${TARGET_VERSION}"; then
                 die "Merge needs manual intervention!
 
 Resolve conflicts then run git commit!"
